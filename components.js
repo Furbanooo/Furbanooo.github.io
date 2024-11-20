@@ -156,5 +156,32 @@ class NavBar extends HTMLElement {
     });
   }
 }
-
 customElements.define("nav-bar", NavBar);
+
+
+class Footer extends HTMLElement {
+  constructor() {
+    super();
+    this.shadow = this.attachShadow({ mode: "open" });
+    this.render();
+  }
+
+  render() {
+    this.shadow.innerHTML = `
+        &copy;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        |porfolio by Furband GBAGUIDI
+    `;
+  }
+  
+  render() {
+    const style = document.createElement("style");
+    style.textContent = `
+    .footer { left: 50%; transform: translateX(-38%); }
+    `;
+    this.shadow.appendChild(style);
+  }
+}
+customElements.define("site-footer", Footer); // Define with a hyphenated name
