@@ -9,7 +9,7 @@ import {
   Tools,
   Projects,
   Ideas,
-} from "./components/component.js";
+} from "./src/components/component.js";
 
 function App() {
   const components = [
